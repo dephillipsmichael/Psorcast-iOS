@@ -10,7 +10,7 @@
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)org.sagebionetworks.Psorcast</string>
+		<string>$(AppIdentifierPrefix)org.sagebionetworks.psorcast</string>
 	</array>
 </dict>
 </plist>
