@@ -36,6 +36,7 @@ import BridgeApp
 import BridgeAppUI
 import Research
 import ResearchUI
+import JsonModel
 
 /// The 'PsoriasisAreaPhotoStepViewController' displays a psoriasis area image that has
 /// buttons overlayed at specific parts of the images to represent zones
@@ -149,66 +150,26 @@ open class PsoriasisAreaPhotoStepViewController: RSDStepViewController, Psoriasi
                 return
         }
         
-        guard let frontTheme = self.psoriasisAreaPhotoStep?.frontImageTheme,
-            let backTheme = self.psoriasisAreaPhotoStep?.backImageTheme else {
+        guard let frontImageId = self.psoriasisAreaPhotoStep?.frontImageTheme?.imageIdentifier,
+              let backImageId = self.psoriasisAreaPhotoStep?.backImageTheme?.imageIdentifier else {
             debugPrint("Could not find front/back psoriasisAreaPhoto images")
             return
         }
         
-        guard let frontSize = self.psoriasisAreaPhotoMap?.front.imageSize.size,
-            let backSize = self.psoriasisAreaPhotoMap?.back.imageSize.size else {
-                debugPrint("We need proper front/back sizes to initialize images")
-                return
+        let frontImage = UIImage(named: frontImageId)
+        self.frontImageView.frontImage = frontImage
+        self.backImageView.frontImage = frontImage
+        
+        let backImage = UIImage(named: backImageId)
+        self.frontImageView.backImage = backImage
+        self.backImageView.backImage = backImage
+        
+        if let backgroundFrontImageId = self.psoriasisAreaPhotoStep?.backgroundFront?.imageIdentifier {
+            self.backgroundImageViewFront.image = UIImage(named: backgroundFrontImageId)
         }
         
-        guard !(frontTheme is RSDAnimatedImageThemeElement),
-            !(backTheme is RSDAnimatedImageThemeElement) else {
-            debugPrint("We do not support animated images for psoriasisAreaPhoto view")
-            return
-        }
-        
-        if let assetLoader = frontTheme as? RSDAssetImageThemeElement {
-            self.frontImageView.frontImage = assetLoader.embeddedImage()
-            self.backImageView.frontImage = assetLoader.embeddedImage()
-        } else if let fetchLoader = frontTheme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: frontSize, callback: { [weak frontImageView, backImageView] (_, img) in
-                frontImageView?.frontImage = img
-                backImageView?.frontImage = img
-            })
-        }
-        
-        if let assetLoader = backTheme as? RSDAssetImageThemeElement {
-            self.frontImageView.backImage = assetLoader.embeddedImage()
-            self.backImageView.backImage = assetLoader.embeddedImage()
-        } else if let fetchLoader = backTheme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: backSize, callback: { [weak frontImageView, backImageView] (_, img) in
-                frontImageView?.backImage = img
-                backImageView?.backImage = img
-            })
-        }
-        
-        if let backgroundTheme = self.psoriasisAreaPhotoStep?.backgroundFront,
-            !(backgroundTheme is RSDAnimatedImageThemeElement) {
-            
-            if let assetLoader = backgroundTheme as? RSDAssetImageThemeElement {
-                self.backgroundImageViewFront.image = assetLoader.embeddedImage()
-            } else if let fetchLoader = backgroundTheme as? RSDFetchableImageThemeElement {
-                fetchLoader.fetchImage(for: frontSize, callback: { (_, img) in
-                    self.backgroundImageViewFront.image = img
-                })
-            }
-        }
-        
-        if let backgroundTheme = self.psoriasisAreaPhotoStep?.backgroundBack,
-            !(backgroundTheme is RSDAnimatedImageThemeElement) {
-            
-            if let assetLoader = backgroundTheme as? RSDAssetImageThemeElement {
-                self.backgroundImageViewBack.image = assetLoader.embeddedImage()
-            } else if let fetchLoader = backgroundTheme as? RSDFetchableImageThemeElement {
-                fetchLoader.fetchImage(for: frontSize, callback: { (_, img) in
-                    self.backgroundImageViewBack.image = img
-                })
-            }
+        if let backgroundBackImageId = self.psoriasisAreaPhotoStep?.backgroundBack?.imageIdentifier {
+            self.backgroundImageViewBack.image = UIImage(named: backgroundBackImageId)
         }
     }
     

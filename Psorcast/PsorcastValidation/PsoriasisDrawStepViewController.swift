@@ -175,51 +175,19 @@ open class PsoriasisDrawStepViewController: RSDStepViewController, ProcessorFini
     }
     
     func initializeImages() {
-        guard let theme = self.drawStep?.imageTheme else {
-            debugPrint("Could not find image theme")
+        guard let themeImageId = self.drawStep?.imageTheme?.imageIdentifier else {
+            debugPrint("Could not find image identifier")
             return
         }
         
-        guard let size = self.drawStep?.regionMap?.imageSize.size else {
-            debugPrint("We need proper image sizes to initialize images")
+        self.imageView.image = UIImage(named: themeImageId)
+        
+        guard let backgroundThemeImageId = self.drawStep?.background?.imageIdentifier else {
+            debugPrint("Could not find background image identifier")
             return
         }
         
-        guard !(imageTheme is RSDAnimatedImageThemeElement) else {
-            debugPrint("We do not support animated images for psoriasis image view")
-            return
-        }
-        
-        if let assetLoader = theme as? RSDAssetImageThemeElement {
-            self.imageView.image = assetLoader.embeddedImage()
-        } else if let fetchLoader = theme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: size, callback: { [weak imageView] (_, img) in
-                imageView?.image = img
-            })
-        }
-        
-        guard let backgroundTheme = self.drawStep?.background else {
-            debugPrint("Could not find background image theme")
-            return
-        }
-        
-        guard !(backgroundTheme is RSDAnimatedImageThemeElement) else {
-            debugPrint("We do not support animated images for psoriasis background")
-            return
-        }
-        
-        guard let backgroundImageView = self.imageView?.backgroundImageView else {
-            debugPrint("Cannot find foreground image view")
-            return
-        }
-        
-        if let assetLoader = backgroundTheme as? RSDAssetImageThemeElement {
-            backgroundImageView.image = assetLoader.embeddedImage()
-        } else if let fetchLoader = backgroundTheme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: size, callback: { (_, img) in
-                backgroundImageView.image = img
-            })
-        }
+        self.imageView?.backgroundImageView?.image = UIImage(named: backgroundThemeImageId)
     }
     
     override open func setupHeader(_ header: RSDStepNavigationView) {

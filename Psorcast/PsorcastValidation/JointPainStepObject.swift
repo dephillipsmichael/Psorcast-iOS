@@ -102,9 +102,8 @@ open class JointPainStepObject: RSDUIStepObject, RSDStepViewControllerVendor, RS
     
     open func shouldSkipStep(with result: RSDTaskResult?, isPeeking: Bool) -> Bool {
         // Only include this step if the user previously chose
-        // its region in the joint selection step
-        if let collectionResult = (result?.findResult(with: RSDStepType.selectionCollection.rawValue) as? RSDCollectionResultObject),
-            let answerResult = collectionResult.inputResults.first as? RSDAnswerResultObject,
+        // its region in the psoriasis draw selection step
+        if let answerResult = result?.stepHistory.last(where: { $0.identifier == RSDStepType.selectionCollection.rawValue }) as? RSDAnswerResultObject,
             let answers = answerResult.value as? [String],
             let region = jointPainMap?.region.rawValue {
             

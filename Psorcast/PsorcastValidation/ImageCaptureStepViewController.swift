@@ -73,8 +73,8 @@ open class ImageCaptureStepObject: RSDUIStepObject, RSDStepViewControllerVendor 
         try super.decode(from: decoder, for: deviceType)
     }
     
-    open class func examples() -> [[String : RSDJSONValue]] {
-        let jsonA: [String : RSDJSONValue] = [
+    open class func examples() -> [[String : Any]] {
+        let jsonA: [String : Any] = [
             "identifier"   : "imagecapture",
             "type"         : "imageCapture",
             "title"        : "Title"

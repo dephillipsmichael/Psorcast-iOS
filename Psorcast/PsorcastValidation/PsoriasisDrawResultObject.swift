@@ -33,6 +33,7 @@
 
 import Foundation
 import Research
+import JsonModel
 
 extension RSDResultType {
     /// The type identifier for a psoriasis draw result.
@@ -83,7 +84,7 @@ public struct PsoriasisDrawResultObject : RSDResult, Codable, RSDArchivable, RSD
         try container.encode(self.regionMap, forKey: .regionMap)
     }
 
-    public func dataScore() throws -> RSDJSONSerializable? {
+    public func dataScore() throws -> JsonSerializable? {
         // First selected identifier
         return self.regionMap.zones
             .filter({ $0.isSelected ?? false })

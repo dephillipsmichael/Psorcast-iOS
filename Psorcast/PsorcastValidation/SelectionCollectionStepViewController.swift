@@ -186,7 +186,7 @@ open class SelectionCollectionStepViewController: RSDStepViewController, UIColle
             if let choice = self.choices?[indexPath.row] {
                 selectionCell.titleLabel?.text = choice.text
                 selectionCell.detailLabel?.text = choice.detail
-                choice.imageVendor?.fetchImage(for: self.collectionCellSize, callback: { (identifier, image) in
+                choice.imageData?.fetchImage(for: self.collectionCellSize, callback: { (identifier, image) in
                     selectionCell.imageView?.image = image
                 })
             }

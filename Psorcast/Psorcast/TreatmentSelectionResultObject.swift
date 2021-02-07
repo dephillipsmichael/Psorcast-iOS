@@ -35,6 +35,7 @@ import UIKit
 import Research
 import ResearchUI
 import BridgeSDK
+import JsonModel
 
 extension RSDResultType {
     /// The type identifier for a joint pain result.
@@ -85,7 +86,7 @@ public struct TreatmentSelectionResultObject : RSDResult, Codable, RSDArchivable
         try container.encode(self.items, forKey: .items)
     }
 
-    public func dataScore() throws -> RSDJSONSerializable? {
+    public func dataScore() throws -> JsonSerializable? {
         // We do not want this to be saved in a study report
         return nil
     }

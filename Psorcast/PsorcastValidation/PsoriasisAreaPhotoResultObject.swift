@@ -32,6 +32,7 @@
 //
 import Foundation
 import Research
+import JsonModel
 
 extension RSDResultType {
     /// The type identifier for a joint pain result.
@@ -82,7 +83,7 @@ public struct PsoriasisAreaPhotoResultObject : RSDResult, Codable, RSDArchivable
         try container.encode(self.psoriasisAreaPhotoMap, forKey: .psoriasisAreaPhotoMap)
     }
 
-    public func dataScore() throws -> RSDJSONSerializable? {
+    public func dataScore() throws -> JsonSerializable? {
         // First selected identifier
         return ((self.psoriasisAreaPhotoMap.front.zones ) +
             (self.psoriasisAreaPhotoMap.back.zones))

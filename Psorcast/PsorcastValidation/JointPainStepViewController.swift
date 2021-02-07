@@ -94,45 +94,24 @@ open class JointPainStepViewController: RSDStepViewController, JointPainImageVie
     }
     
     func initializeImages() {
-        guard let theme = self.jointPainStep?.imageTheme else {
+        guard let themeImageId = self.jointPainStep?.imageTheme?.imageIdentifier else {
             return
-        }
-        
-        guard let size = self.jointPainStep?.jointPainMap?.imageSize.size else {
-            return
-        }
+        }        
         
         guard !(imageTheme is RSDAnimatedImageThemeElement) else {
             debugPrint("We do not support animated images for psoriasis image view")
             return
         }
         
-        if let assetLoader = theme as? RSDAssetImageThemeElement {
-            self.jointImageView.image = assetLoader.embeddedImage()
-        } else if let fetchLoader = theme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: size, callback: { [weak jointImageView] (_, img) in
-                jointImageView?.image = img
-            })
-        }
+        self.jointImageView.image = UIImage(named: themeImageId)
         
         self.initJointPainImageView()
         
-        guard let backgroundTheme = self.jointPainStep?.background else {
+        guard let backgroundThemeImageId = self.jointPainStep?.background?.imageIdentifier else {
             return
         }
         
-        guard !(backgroundTheme is RSDAnimatedImageThemeElement) else {
-            debugPrint("We do not support animated images for psoriasis background")
-            return
-        }
-        
-        if let assetLoader = backgroundTheme as? RSDAssetImageThemeElement {
-            self.backgroundImageView?.image = assetLoader.embeddedImage()
-        } else if let fetchLoader = backgroundTheme as? RSDFetchableImageThemeElement {
-            fetchLoader.fetchImage(for: size, callback: { [weak backgroundImageView] (_, img) in
-                backgroundImageView?.image = img
-            })
-        }
+        self.backgroundImageView?.image = UIImage(named: backgroundThemeImageId)        
     }
     
     func initJointPainImageView() {

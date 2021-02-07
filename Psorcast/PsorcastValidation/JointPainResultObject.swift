@@ -33,6 +33,7 @@
 
 import Foundation
 import Research
+import JsonModel
 
 extension RSDResultType {
     /// The type identifier for a joint pain result.
@@ -83,7 +84,7 @@ public struct JointPainResultObject : RSDResult, Codable, RSDArchivable, RSDScor
         try container.encode(self.jointPainMap, forKey: .jointPainMap)
     }
 
-    public func dataScore() throws -> RSDJSONSerializable? {
+    public func dataScore() throws -> JsonSerializable? {
         // The selected identifiers as an array
         return self.jointPainMap.joints
             .filter({ $0.isSelected ?? false })

@@ -97,10 +97,9 @@ open class TaskFactory: SBAFactory {
 open class NoPsoriasisStepObject: RSDUIStepObject, RSDNavigationSkipRule {
     
     public func shouldSkipStep(with result: RSDTaskResult?, isPeeking: Bool) -> Bool {
-        if let collectionResult = (result?.findResult(with: RSDStepType.selectionCollection.rawValue) as? RSDCollectionResultObject) {
-            let answerResult = collectionResult.inputResults.first as? RSDAnswerResultObject
-            let answers = answerResult?.value as? [String]
-            return (answerResult != nil && (answers?.count ?? 0) > 0)
+        if let answerResult = result?.stepHistory.last(where: { $0.identifier == RSDStepType.selectionCollection.rawValue }) as? RSDAnswerResultObject,
+           let answers = answerResult.value as? [String] {
+            return answers.count > 0
         }
         return true
     }
