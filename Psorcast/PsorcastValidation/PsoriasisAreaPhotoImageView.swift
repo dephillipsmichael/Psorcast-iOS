@@ -34,6 +34,8 @@
 import UIKit
 import BridgeApp
 import BridgeAppUI
+import Research
+import ResearchUI
 
 open class PsoriasisAreaPhotoImageView: UIView, RSDViewDesignable {
     

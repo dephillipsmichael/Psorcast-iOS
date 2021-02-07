@@ -33,6 +33,7 @@
 
 import Foundation
 import BridgeApp
+import Research
 import MotorControl
 
 public extension RSDIdentifier {

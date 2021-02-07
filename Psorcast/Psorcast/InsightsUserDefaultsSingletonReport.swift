@@ -32,6 +32,8 @@
 //
 
 import BridgeApp
+import Research
+import ResearchUI
 
 open class InsightsUserDefaultsSingletonReport: UserDefaultsSingletonReport {    
     

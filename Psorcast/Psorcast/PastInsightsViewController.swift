@@ -32,6 +32,7 @@
 //
 
 import UIKit
+import Research
 import ResearchUI
 
 open class PastInsightsViewController: UITableViewController, RSDTaskViewControllerDelegate {

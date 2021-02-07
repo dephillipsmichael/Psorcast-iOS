@@ -33,6 +33,8 @@
 
 import UIKit
 import BridgeAppUI
+import Research
+import ResearchUI
 
 internal let kCollectionCellSideMargin: CGFloat = 28.0
 internal let kCollectionCellSeparatorInsetMargin: CGFloat = 0.0
@@ -63,11 +65,11 @@ internal let kCollectionCellSectionTopMargin: CGFloat = 40.0
                 return background
             }
             else {
-                return RSDStudyConfiguration.shared.colorPalette.primary.normal
+                return AppDelegate.designSystem.colorRules.backgroundPrimary
             }
         }
         else {
-            return RSDStudyConfiguration.shared.colorPalette.grayScale.white
+            return AppDelegate.designSystem.colorRules.palette.grayScale.white
         }
     }
     

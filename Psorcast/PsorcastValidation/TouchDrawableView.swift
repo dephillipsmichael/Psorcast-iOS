@@ -33,6 +33,8 @@
 
 import UIKit
 import BridgeAppUI
+import Research
+import ResearchUI
 
 public protocol TouchDrawableViewListener: class {
     func onDrawComplete()

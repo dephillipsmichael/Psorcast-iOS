@@ -31,10 +31,9 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-import Foundation
+import UIKit
 import BridgeApp
 import Research
-import MotorControl
 
 /// Subclass the schedule manager to set up a predicate to filter the schedules.
 public class TryItFirstTaskScheduleManager : SBAScheduleManager {

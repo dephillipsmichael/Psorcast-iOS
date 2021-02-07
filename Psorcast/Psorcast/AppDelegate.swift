@@ -35,6 +35,7 @@ import UIKit
 import BridgeApp
 import BridgeSDK
 import Research
+import ResearchUI
 import BridgeAppUI
 
 @UIApplicationMain
@@ -96,9 +97,6 @@ class AppDelegate: SBAAppDelegate, RSDTaskViewControllerDelegate {
         // Set up localization.
         let mainBundle = LocalizationBundle(bundle: Bundle.main, tableName: "Psorcast")
         Localization.insert(bundle: mainBundle, at: 0)
-        
-        // Set up font rules.
-        RSDStudyConfiguration.shared.fontRules = PSRFontRules(version: 0)
         
         // Setup reminder manager
         ReminderManager.shared.setupNotifications()

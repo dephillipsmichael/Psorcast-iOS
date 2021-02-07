@@ -32,9 +32,11 @@
 //
 
 
-import Foundation
+import UIKit
 import BridgeApp
 import BridgeAppUI
+import Research
+import ResearchUI
 
 open class JointPainStepObject: RSDUIStepObject, RSDStepViewControllerVendor, RSDNavigationSkipRule {
     

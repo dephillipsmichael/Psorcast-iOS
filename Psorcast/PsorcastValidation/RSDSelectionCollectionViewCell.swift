@@ -33,6 +33,8 @@
 
 import UIKit
 import BridgeAppUI
+import Research
+import ResearchUI
 
 /// `RSDSelectionTableViewCell` is the base implementation for a selection collection view cell.
 @IBDesignable open class RSDSelectionCollectionViewCell: RSDCollectionViewCell {

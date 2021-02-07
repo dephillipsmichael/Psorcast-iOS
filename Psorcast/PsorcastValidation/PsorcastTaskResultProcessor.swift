@@ -31,7 +31,10 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+import UIKit
 import BridgeAppUI
+import Research
+import ResearchUI
 
 public final class PsorcastTaskResultProcessor {
 

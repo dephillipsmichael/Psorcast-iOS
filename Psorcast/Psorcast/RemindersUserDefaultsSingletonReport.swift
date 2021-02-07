@@ -32,6 +32,7 @@
 //
 
 import BridgeApp
+import Research
 
 open class RemindersUserDefaultsSingletonReport: UserDefaultsSingletonReport {
 

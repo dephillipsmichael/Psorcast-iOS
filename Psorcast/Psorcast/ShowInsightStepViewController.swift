@@ -36,6 +36,8 @@ import AVFoundation
 import UIKit
 import BridgeApp
 import BridgeAppUI
+import Research
+import ResearchUI
 import SDWebImage
 
 class HorizontallyCenteredButton: UIButton {

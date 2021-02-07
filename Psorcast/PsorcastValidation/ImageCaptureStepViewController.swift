@@ -35,7 +35,8 @@ import AVFoundation
 import UIKit
 import BridgeApp
 import BridgeAppUI
-import GPUImage
+import Research
+import ResearchUI
 
 open class ImageCaptureStepObject: RSDUIStepObject, RSDStepViewControllerVendor {
     

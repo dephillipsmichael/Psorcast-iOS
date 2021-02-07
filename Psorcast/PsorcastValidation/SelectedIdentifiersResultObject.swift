@@ -32,6 +32,8 @@
 //
 
 import BridgeAppUI
+import Research
+import ResearchUI
 
 extension RSDResultType {
     /// The type identifier for a joint pain completion result.

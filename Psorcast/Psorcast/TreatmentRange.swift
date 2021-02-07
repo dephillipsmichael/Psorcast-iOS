@@ -32,6 +32,7 @@
 //
 
 import BridgeApp
+import Research
 
 public struct TreatmentRange {
     var treatments: [String]

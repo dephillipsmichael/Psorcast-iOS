@@ -31,9 +31,11 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+import CoreData
 import BridgeApp
 import Research
 import ResearchUI
+import BridgeSDK
 
 open class HistoryDataManager {
     

@@ -31,10 +31,12 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 import BridgeApp
 import BridgeAppUI
+import Research
+import ResearchUI
 
 let TaskReminderNotificationCategory = "TaskReminder"
 

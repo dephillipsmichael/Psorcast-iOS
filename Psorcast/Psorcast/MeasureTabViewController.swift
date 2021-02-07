@@ -34,6 +34,8 @@
 import UIKit
 import BridgeApp
 import BridgeSDK
+import Research
+import ResearchUI
 import MotorControl
 
 open class MeasureTabViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, TaskCollectionViewCellDelegate, RSDTaskViewControllerDelegate, NSFetchedResultsControllerDelegate {

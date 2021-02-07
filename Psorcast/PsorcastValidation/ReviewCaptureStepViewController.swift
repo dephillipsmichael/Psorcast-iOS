@@ -31,9 +31,11 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-import Foundation
+import UIKit
 import BridgeApp
 import BridgeAppUI
+import Research
+import ResearchUI
 
 open class ReviewCaptureStepObject: RSDUIStepObject, RSDStepViewControllerVendor {
     

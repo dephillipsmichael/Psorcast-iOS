@@ -34,7 +34,8 @@
 import UIKit
 import BridgeApp
 import BridgeSDK
-import MotorControl
+import Research
+import ResearchUI
 
 class ProfileTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RSDTaskViewControllerDelegate, RSDButtonCellDelegate {
             

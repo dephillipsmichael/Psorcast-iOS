@@ -32,7 +32,8 @@
 //
 
 import UIKit
-import MotorControl
+import Research
+import ResearchUI
 import BridgeApp
 import UserNotifications
 

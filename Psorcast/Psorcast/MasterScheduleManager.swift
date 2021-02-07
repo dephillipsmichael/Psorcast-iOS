@@ -34,7 +34,8 @@
 import Foundation
 import BridgeApp
 import Research
-import MotorControl
+import ResearchUI
+import BridgeSDK
 
 /// Subclass the schedule manager to set up a predicate to filter the schedules.
 open class MasterScheduleManager : SBAScheduleManager {

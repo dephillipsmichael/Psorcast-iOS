@@ -33,6 +33,7 @@
 
 import UIKit
 import BridgeApp
+import Research
 import ResearchUI
 
 open class FilterTreatmentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {

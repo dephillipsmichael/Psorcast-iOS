@@ -32,6 +32,8 @@
 //
 
 import BridgeApp
+import Research
+import BridgeSDK
 
 extension RSDStepType {
     public static let treatmentSelection: RSDStepType = "treatmentSelection"

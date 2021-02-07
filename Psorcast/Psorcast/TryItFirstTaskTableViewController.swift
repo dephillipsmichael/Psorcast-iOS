@@ -34,6 +34,8 @@
 import UIKit
 import BridgeApp
 import BridgeSDK
+import Research
+import ResearchUI
 import MotorControl
 
 class TryItFirstTaskTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, TaskCollectionViewCellDelegate, RSDTaskViewControllerDelegate {

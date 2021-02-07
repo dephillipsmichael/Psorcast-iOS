@@ -32,6 +32,8 @@
 //
 
 import BridgeApp
+import Research
+import ResearchUI
 
 extension RSDStepType {
     public static let imageCapture: RSDStepType = "imageCapture"

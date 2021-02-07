@@ -32,7 +32,10 @@
 //
 
 import UIKit
+import CoreData
 import BridgeApp
+import BridgeAppUI
+import Research
 import ResearchUI
 import AVKit
 import AVFoundation

@@ -32,7 +32,8 @@
 //
 
 import UIKit
-import MotorControl
+import Research
+import ResearchUI
 import BridgeApp
 
 class LearnMoreStep : RSDUIStepObject, RSDStepViewControllerVendor {
